@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <Router basename="/pokemon-app">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemon/:name" element={<PokemonDetails />} />
