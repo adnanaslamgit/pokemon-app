@@ -1,0 +1,30 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f8d030; 
+    text-align: center;
+  }
+  
+  .loaderImage {
+    width: 80px; 
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  .loaderText {
+    font-size: 22px;
+    color: #ff0000; 
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  

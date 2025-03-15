@@ -1,0 +1,65 @@
+@import "../../styles/variables";
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    max-width: 120px;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: rotate(5deg) scale(1.1);
+    }
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ff5959;
+    margin: 10px 0;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+    text-decoration: none;
+  }
+
+  .abilities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+
+    span {
+      background: #ffcc00;
+      color: #333;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: capitalize;
+    }
+  }
+}

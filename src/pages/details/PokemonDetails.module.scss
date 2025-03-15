@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* 🔙 Improved Back Button Style */
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #ff5959, #ffcc00); /* Pokemon Theme */
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: linear-gradient(135deg, #ffcc00, #ff5959);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  /* Add an arrow for better UI */
+  &::before {
+    content: "◀";
+    font-size: 1.2rem;
+  }
+}
+
+/* Pokemon Details Card */
+.detailsCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: center;
+}
+
+.detailsCard img {
+  max-width: 200px;
+  height: auto;
+}
+
+.detailsCard h1 {
+  font-size: 2rem;
+  color: #ff5959;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.detailsCard p {
+  font-size: 1.2rem;
+  color: #555;
+}

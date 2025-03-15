@@ -1,0 +1,20 @@
+.sortContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  
+    .sortSelect {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background-color: white;
+      cursor: pointer;
+      transition: 0.3s;
+  
+      &:hover {
+        border-color: #ffcc00;
+      }
+    }
+  }
+  
