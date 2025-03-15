@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import PokemonDetails from "./pages/details/PokemonDetails";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,25 +6,18 @@ import NotFound from "./components/notfound/NotFound";
 
 const queryClient = new QueryClient();
 
-type AppProps = {
-  router?: React.ReactNode; 
-};
-
-const App = ({ router }: AppProps) => {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      {router || (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/pokemon/:name" element={<PokemonDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      )}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pokemon/:name" element={<PokemonDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </QueryClientProvider>
   );
 };
 
 export default App;
-
