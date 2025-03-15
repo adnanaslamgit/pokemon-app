@@ -4,22 +4,19 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Home from "./Home";
 import { usePokemon } from "../../hooks/usePokemon";
 
-// Mocking the `usePokemon` custom hook
 jest.mock("../../hooks/usePokemon", () => ({
   usePokemon: jest.fn(),
 }));
 
-// Create a test QueryClient
 const createTestQueryClient = () =>
   new QueryClient({
     defaultOptions: {
       queries: {
-        retry: false, // Prevent retrying failed queries in tests
+        retry: false, 
       },
     },
   });
 
-// Mock Pokémon data with Squirtle added
 const mockPokemonData = [
   {
     id: 1,
@@ -113,7 +110,7 @@ describe("Home Component", () => {
     expect(screen.getByText("Error loading Pokemon data!")).toBeInTheDocument();
   });
 
-  test("filters Pokémon based on search input", async () => {
+  test("filters Pokemon based on search input", async () => {
     (usePokemon as jest.Mock).mockReturnValue({
       data: mockPokemonData,
       isLoading: false,
@@ -132,7 +129,7 @@ describe("Home Component", () => {
     });
   });
 
-  test("sorts Pokémon by name", async () => {
+  test("sorts Pokemon by name", async () => {
     (usePokemon as jest.Mock).mockReturnValue({
       data: mockPokemonData,
       isLoading: false,
@@ -146,11 +143,11 @@ describe("Home Component", () => {
 
     await waitFor(() => {
       const pokemonNames = screen.getAllByRole("heading", { level: 2 }).map((el) => el.textContent?.trim());
-      expect(pokemonNames).toEqual(["bulbasaur", "charmander", "squirtle"]); // Sorted alphabetically
+      expect(pokemonNames).toEqual(["bulbasaur", "charmander", "squirtle"]); 
     });
   });
 
-  test("sorts Pokémon by height", async () => {
+  test("sorts Pokemon by height", async () => {
     (usePokemon as jest.Mock).mockReturnValue({
       data: mockPokemonData,
       isLoading: false,
@@ -164,11 +161,11 @@ describe("Home Component", () => {
 
     await waitFor(() => {
       const pokemonNames = screen.getAllByRole("heading", { level: 2 }).map((el) => el.textContent?.trim());
-      expect(pokemonNames).toEqual(["squirtle", "charmander", "bulbasaur"]); // Sorted by height
+      expect(pokemonNames).toEqual(["squirtle", "charmander", "bulbasaur"]); 
     });
   });
 
-  test("sorts Pokémon by weight", async () => {
+  test("sorts Pokemon by weight", async () => {
     (usePokemon as jest.Mock).mockReturnValue({
       data: mockPokemonData,
       isLoading: false,
@@ -182,7 +179,7 @@ describe("Home Component", () => {
 
     await waitFor(() => {
       const pokemonNames = screen.getAllByRole("heading", { level: 2 }).map((el) => el.textContent?.trim());
-      expect(pokemonNames).toEqual(["bulbasaur", "charmander", "squirtle"]); // Sorted by weight
+      expect(pokemonNames).toEqual(["bulbasaur", "charmander", "squirtle"]);
     });
   });
 
@@ -199,14 +196,14 @@ describe("Home Component", () => {
     fireEvent.click(nextButton);
 
     await waitFor(() => {
-      expect(usePokemon).toHaveBeenCalledWith(20, 20); // Offset should increase
+      expect(usePokemon).toHaveBeenCalledWith(20, 20); 
     });
 
-    const prevButton = screen.getByText(/⬅️ Back/i); // Fixed text match
+    const prevButton = screen.getByText(/⬅️ Back/i);
     fireEvent.click(prevButton);
 
     await waitFor(() => {
-      expect(usePokemon).toHaveBeenCalledWith(20, 0); // Offset should decrease
+      expect(usePokemon).toHaveBeenCalledWith(20, 0); 
     });
   });
 });

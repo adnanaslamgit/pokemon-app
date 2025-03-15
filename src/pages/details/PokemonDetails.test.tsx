@@ -3,14 +3,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import PokemonDetails from "./PokemonDetails";
 
-// Mock global fetch
 global.fetch = jest.fn();
 
-// Utility function to render with providers
 const renderWithProviders = (name: string) => {
   const queryClient = new QueryClient({
     defaultOptions: {
-      queries: { retry: false }, // Disable retries to avoid unwanted delays
+      queries: { retry: false }, 
     },
   });
 
@@ -32,7 +30,7 @@ describe("PokemonDetails Component", () => {
 
   test("renders loading state initially", async () => {
     (fetch as jest.Mock).mockImplementationOnce(() =>
-      new Promise(() => {}) // Keeps the promise pending
+      new Promise(() => {}) 
     );
 
     renderWithProviders("pikachu");
@@ -78,7 +76,6 @@ describe("PokemonDetails Component", () => {
 
     renderWithProviders("pikachu");
 
-    // Wait for details to be displayed
     await waitFor(() => {
       expect(screen.getByRole("heading", { name: /pikachu/i })).toBeInTheDocument();
     });
@@ -97,7 +94,7 @@ describe("PokemonDetails Component", () => {
             name: "pikachu",
             height: 4,
             weight: 60,
-            sprites: {}, // No "official-artwork"
+            sprites: {},
           }),
       })
     );

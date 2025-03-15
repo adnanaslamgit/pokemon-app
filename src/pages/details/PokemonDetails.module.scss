@@ -5,12 +5,11 @@
   text-align: center;
 }
 
-/* 🔙 Improved Back Button Style */
 .backButton {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: linear-gradient(135deg, #ff5959, #ffcc00); /* Pokemon Theme */
+  background: linear-gradient(135deg, #ff5959, #ffcc00);
   color: white;
   border: none;
   padding: 12px 18px;
@@ -34,14 +33,12 @@
     transform: scale(0.95);
   }
 
-  /* Add an arrow for better UI */
   &::before {
     content: "◀";
     font-size: 1.2rem;
   }
 }
 
-/* Pokemon Details Card */
 .detailsCard {
   background: white;
   border-radius: 12px;

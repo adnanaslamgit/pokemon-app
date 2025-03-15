@@ -7,7 +7,7 @@ import NotFound from "./components/notfound/NotFound";
 const queryClient = new QueryClient();
 
 type AppProps = {
-  router?: React.ReactNode; // Allow custom router for tests
+  router?: React.ReactNode; 
 };
 
 const App = ({ router }: AppProps) => {

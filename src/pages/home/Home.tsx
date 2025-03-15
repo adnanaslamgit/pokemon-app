@@ -15,7 +15,7 @@ const Home = () => {
   const { data, isLoading, error } = usePokemon(limit, offset);
 
   const filteredSortedPokemon = useMemo(() => {
-    const pokemonList = data || []; // Ensure data is always an array
+    const pokemonList = data || []; 
 
     return pokemonList
       .filter((pokemon) =>

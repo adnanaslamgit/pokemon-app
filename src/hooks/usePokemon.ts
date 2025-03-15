@@ -18,6 +18,6 @@ export const usePokemon = (limit: number, offset: number) => {
   return useQuery({
     queryKey: ["pokemon", limit, offset],
     queryFn: () => fetchPokemonList(limit, offset),
-    staleTime: 1000 * 60 * 5, // Cache for 5 minutes
+    staleTime: 1000 * 60 * 5,
   });
 };

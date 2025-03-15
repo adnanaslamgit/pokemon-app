@@ -1,6 +1,7 @@
 {
   "name": "pokemon-app",
   "version": "0.1.0",
+  "homepage": "https://adnanaslamgit.github.io/pokemon-app",
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^5.68.0",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +60,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^29.5.14",
+    "gh-pages": "^6.3.0",
     "jest": "^29.7.0",
     "jest-fetch-mock": "^3.0.3",
     "react-scripts": "^5.0.1",
